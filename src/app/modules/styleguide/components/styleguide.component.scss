@@ -1,0 +1,30 @@
+:host{
+    display: block;
+    margin:10px;
+    background:white;
+    padding:20px;
+    box-sizing: border-box;
+    .box-container{
+        position: relative;
+        max-width:100%;
+        box-sizing: border-box;
+        .box{
+            border:1px solid #efefef;
+            padding:10px;
+            margin:10px;   
+            position: relative; 
+            padding-top:30px;
+            max-width:50%;
+            min-width:300px;
+            float: left;
+            .box-header{
+                position: absolute;
+                top: 5px;
+                left: 10px;
+                color:#336699BB;
+                font-weight: bold;
+            }
+        }
+    }
+}
+

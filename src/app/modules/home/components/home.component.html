@@ -1,0 +1,20 @@
+<div >
+    <button (click)="active=!active">Toggle Tab</button>
+  <div style="width:100%;height:calc(100vh - 30px);overflow:auto" *ngIf="active">
+    
+      <div *ngFor="let card of cards" style="margin:10px;border-radius:10px;border:1px solid blue;width:100px;height:100px;background-color:red; float:left;">
+        Name : {{card.name}}<br/>
+        Age : {{ card.age}}<br/>
+       
+      </div>
+  </div>
+  
+  <div style="width:100%;height:calc(100vh - 30px);overflow:auto" *ngIf="!active">
+    
+    <div *ngFor="let card of cards2" style="margin:10px;border-radius:10px;border:1px solid blue;width:100px;height:100px;background-color:red; float:left;">
+      Name : {{card.name}}<br/>
+      Age : {{ card.age}}<br/>
+      
+    </div>
+  </div>
+  </div>
