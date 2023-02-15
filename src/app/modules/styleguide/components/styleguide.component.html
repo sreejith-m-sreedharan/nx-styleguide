@@ -1,3 +1,7 @@
+Count : {{ count$ | async}} 
+<button (click)="increment()">+</button>
+<button (click)="decrement()">-</button>
+<button (click)="reset()">x</button>
 <div class="box-container">
   <div class="box">
   <span class="box-header">{{widget1.data}}</span>

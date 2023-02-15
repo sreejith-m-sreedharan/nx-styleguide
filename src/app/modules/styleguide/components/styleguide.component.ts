@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { increment, decrement, reset, loadCounter } from '../../../store/user/user.actions';
 
 @Component({
   selector: 'app-styleguide',
@@ -8,6 +11,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class StyleguideComponent {
   title = 'test-app';
+  count$: Observable<number>;
    widget1:any = {
     name: "sreejith",
   }
@@ -16,11 +20,25 @@ export class StyleguideComponent {
     name: "ranjith"
   }
 
-  constructor(http:HttpClient){
-     this.widget1.data = this.getData(this.widget1);
-
+  constructor(http:HttpClient,private store: Store<{ count: number }>) {
+    this.store.dispatch(loadCounter());
+    this.count$ = store.select('count');
+    this.widget1.data = this.getData(this.widget1);
   }
   getData(widget: any){
     return widget.name;
+  }
+ 
+ 
+  increment() {
+    this.store.dispatch(increment());
+  }
+ 
+  decrement() {
+    this.store.dispatch(decrement());
+  }
+ 
+  reset() {
+    this.store.dispatch(reset());
   }
 }
