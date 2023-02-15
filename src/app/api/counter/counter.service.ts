@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 import {of} from 'rxjs';
 
 @Injectable()
-export class UserService {
+export class CounterService {
     constructor(private http:HttpClient){
 
     }
-    getUsers(){
+    getCounter(){
         return this.http.get('http://myexample3.com');
     }
 }

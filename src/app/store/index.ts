@@ -1,5 +1,5 @@
-import { counterReducer } from "./user/user.reducer";
-import { UserEffects } from "./user/user.effects";
+import { counterReducer } from "./counter/counter.reducer";
+import { CounterEffects } from "./counter/counter.effects";
 
 export const reducers = {count: counterReducer};
-export const effects = [UserEffects];
+export const effects = [CounterEffects];

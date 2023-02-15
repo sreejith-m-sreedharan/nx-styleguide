@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { increment, decrement, reset, loadCounter } from '../../../store/user/user.actions';
+import { increment, decrement, reset, loadCounter } from '../../../store/counter/counter.actions';
 
 @Component({
   selector: 'app-styleguide',
