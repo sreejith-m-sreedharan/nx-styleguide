@@ -3,8 +3,18 @@ Count : {{ count$ | async}}
 <button (click)="decrement()">-</button>
 <button (click)="reset()">x</button>
 <button (click)="printCards(cardElement)">Print Cards</button>
-<div class="box-container" #cardElement>
-  <div class="box" *ngFor="let card of cards">
+<div class="box-container" #cardElement style="min-width:1754px;max-width:1754px;">
+  <div>
+  <div class="box" *ngFor="let card of cards" style=" border:1px solid #efefef;
+  padding:20px;
+  margin:10px;   
+  position: relative; 
+  max-width:calc((3.78 * 96px)/1.4);
+  min-width:calc((3.78 * 96px)/1.4);;
+  min-height:calc((2.125 * 96px)/1.4);
+  max-height:calc((2.125 * 96px)/1.4);
+  float: left;
+  overflow:hidden;">
   <div class="title" >
     {{card.baseForm}}
   </div>

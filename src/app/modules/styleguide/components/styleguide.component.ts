@@ -130,15 +130,43 @@ export class StyleguideComponent {
         this.cards = vocabs;
       });
   }
+  isAroundBreakPoint(yBottom:number,height:number){
+      let rem = yBottom % (2480 - 120);
+          if(rem < height ){
+            return {
+              rem:  rem - 120,
+              flag: true
+            }
+
+          }
+      return {
+        rem: rem,
+        flag: false
+      }
+  }
+  calculateBreakPoint(element:any){
+    for(let node of element.querySelectorAll('.box')){
+      let elem = <HTMLElement>node;
+      let box = elem.getBoundingClientRect();
+      let pos = this.isAroundBreakPoint(box.bottom , box.height);
+      if(pos.flag){
+        elem.style.marginTop = pos.rem+'px';
+        elem.style.border = '1px solid red';
+        this.calculateBreakPoint(element);
+        break;
+      }
+    }
+  }
   printCards(element: HTMLElement) {
     console.log("style ",window.getComputedStyle(element))
-    
+   // this.calculateBreakPoint(element);
     console.log('print ', element);
-    let doc: jsPDF = new jsPDF('p', 'px', [1000,800]);
+    let doc: jsPDF = new jsPDF('p', 'px', [1754,2480]);
       doc.html(element,{
         callback:function (pdf:jsPDF)  {
           doc.save('tech-html-to-pdf.pdf');  
         },
+        margin:60
       });
   }
 }
