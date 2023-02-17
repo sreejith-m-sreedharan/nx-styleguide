@@ -1,0 +1,9 @@
+{
+  "/oxfordAPI/*": {
+    "target": "https://od-api.oxforddictionaries.com/api/v2",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": { "^/oxfordAPI": "" }
+  }
+}

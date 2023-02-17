@@ -1,10 +1,14 @@
 export const MocksConfig = [
     {
-    "url":"http://myexample.com",
-    "mock":"/assets/mocks/myMock.json"
+    "url":"http://my.dictionary.online",
+    "mock":"/assets/mocks/dictionaryMock.json"
+    },
+    {
+    "url":"http://myKindle.dictionary.online",
+    "mock":"/assets/mocks/kindleMock.json"
     },
     {
     "url":"http://myexample3.com",
-    "mock":"/assets/mocks/myMock2.json"
+    "mock":"/assets/mocks/counterMock.json"
     }
 ];

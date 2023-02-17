@@ -2,25 +2,18 @@ Count : {{ count$ | async}}
 <button (click)="increment()">+</button>
 <button (click)="decrement()">-</button>
 <button (click)="reset()">x</button>
-<div class="box-container">
-  <div class="box">
-  <span class="box-header">{{widget1.data}}</span>
-    <app-text-field></app-text-field>
-</div>
-<div class="box">
-  <span class="box-header">Input</span>
-    <app-text-field></app-text-field>
-</div>
-<p style="clear:both"></p>
-</div>
-<div class="box-container">
-  <div class="box">
-  <span class="box-header">{{widget2.name}}</span>
-    <app-text-field></app-text-field>
-</div>
-<div class="box">
-  <span class="box-header">Input</span>
-    <app-text-field></app-text-field>
+<button (click)="printCards(cardElement)">Print Cards</button>
+<div class="box-container" #cardElement>
+  <div class="box" *ngFor="let card of cards">
+  <div class="title" >
+    {{card.baseForm}}
+  </div>
+  <!-- <div class="sub-title">
+    {{card.meaning?.results?.0.?.lexicalEntries?.0?.entries?.0?.pronunciations?.0?.phoneticSpelling}}
+  </div> -->
+  <div>
+    {{(card.context.length > 200)?(card.context | slice:0:200)+'...' : card.context }}
+  </div>
 </div>
 <p style="clear:both"></p>
 </div>
